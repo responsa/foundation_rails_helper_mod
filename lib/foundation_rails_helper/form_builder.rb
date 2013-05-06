@@ -14,11 +14,14 @@ module FoundationRailsHelper
     end
 
     def check_box(attribute, options = {})
-      custom_label(attribute, options[:label], options[:label_options]) do
+      html = custom_label(attribute, options[:label], options[:label_options]) do
         options.delete(:label)
         options.delete(:label_options)
         super(attribute, options)
-      end + error_and_hint(attribute, options)
+      end
+
+      html += content_tag(:p, options[:description], :class => 'description') if options[:description].present?
+      html += error_and_hint(attribute, options)
     end
 
     def radio_button(attribute, tag_value, options = {})
