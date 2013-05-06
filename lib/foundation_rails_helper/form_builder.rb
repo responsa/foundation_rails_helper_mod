@@ -111,11 +111,11 @@ module FoundationRailsHelper
       options[:class] += " error" if has_error?(attribute)
       options.delete(:label)
       options.delete(:label_options)
-      html += '<div class="input-wrapper">'
-      html += yield(options)
-      html += error_and_hint(attribute, options)
-      html += '</div>'
-      html.html_safe
+      
+      content_tag(:div, :class => 'input-wrapper') do
+        html += yield(options)
+        html += error_and_hint(attribute, options)
+      end
     end
   end
 end
