@@ -115,6 +115,7 @@ module FoundationRailsHelper
       html += yield(options)
       html += error_and_hint(attribute, options)
       html += '</div>'
+      html.html_safe
     end
   end
 end
