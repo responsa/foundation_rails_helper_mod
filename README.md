@@ -1,4 +1,4 @@
-# FoundationRailsHelper with description [![Build Status](https://secure.travis-ci.org/sgruhier/foundation_rails_helper.png)](http://travis-ci.org/sgruhier/foundation_rails_helper)
+# FoundationRailsHelperMod [![Build Status](https://secure.travis-ci.org/sgruhier/foundation_rails_helper.png)](http://travis-ci.org/sgruhier/foundation_rails_helper)
 
 Based on foundation_rails_helper repo. But fixed.
 _______
@@ -52,7 +52,7 @@ Add this line to your application's Gemfile:
 
 ```ruby
 gem 'zurb-foundation'
-gem 'foundation_rails_helper'
+gem 'foundation_rails_helper_mod'
 ```
 
 And then execute:
@@ -68,7 +68,7 @@ There is nothing additional to do for form helpers.
 To get access to `display_flash_messages` in your views, add
 
 ```ruby
-include FoundationRailsHelper::FlashHelper
+include FoundationRailsHelperMod::FlashHelper
 ```
 
 to `app/helpers/application_helper.rb`

@@ -1,0 +1,4 @@
+require "foundation_rails_helper_mod/version"
+require "foundation_rails_helper_mod/form_builder"
+require "foundation_rails_helper_mod/flash_helper"
+require "foundation_rails_helper_mod/action_view_extension"

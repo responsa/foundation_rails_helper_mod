@@ -2,13 +2,13 @@
 
 require "spec_helper"
 
-describe FoundationRailsHelper::FlashHelper do
+describe FoundationRailsHelperMod::FlashHelper do
   include ActionView::Context if defined?(ActionView::Context)
   include ActionView::Helpers::UrlHelper
   include ActionView::Helpers::TagHelper
-  include FoundationRailsHelper::FlashHelper
+  include FoundationRailsHelperMod::FlashHelper
 
-  FoundationRailsHelper::FlashHelper::DEFAULT_KEY_MATCHING.each do |message_type, foundation_type|
+  FoundationRailsHelperMod::FlashHelper::DEFAULT_KEY_MATCHING.each do |message_type, foundation_type|
     it "displays flash message with #{foundation_type} class for #{message_type} message" do
       self.stub!(:flash).and_return({message_type => "Flash message"})
       node = Capybara.string display_flash_messages

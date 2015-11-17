@@ -1,6 +1,6 @@
 require 'action_view/helpers'
 
-module FoundationRailsHelper
+module FoundationRailsHelperMod
   module FlashHelper
     # <div class="alert-box [success alert secondary]">
     #   This is an alert box.
@@ -14,7 +14,7 @@ module FoundationRailsHelper
     }
     def display_flash_messages(key_matching = {})
       key_matching = DEFAULT_KEY_MATCHING.merge(key_matching)
-      
+
       flash.inject "" do |message, (key, value)|
         message += content_tag :div, :class => "alert-box #{key_matching[key] || :standard}" do
           (value + link_to("&times;".html_safe, "#", :class => :close)).html_safe

@@ -1,6 +1,6 @@
 require 'action_view/helpers'
 
-module FoundationRailsHelper
+module FoundationRailsHelperMod
   class FormBuilder < ActionView::Helpers::FormBuilder
     include ActionView::Helpers::TagHelper
     %w(file_field email_field text_area telephone_field phone_field url_field number_field).each do |method_name|
