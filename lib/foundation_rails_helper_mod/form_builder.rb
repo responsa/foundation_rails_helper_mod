@@ -3,7 +3,8 @@ require 'action_view/helpers'
 module FoundationRailsHelperMod
   class FormBuilder < ActionView::Helpers::FormBuilder
     include ActionView::Helpers::TagHelper
-    %w(file_field email_field text_area telephone_field phone_field url_field number_field).each do |method_name|
+
+    %w(file_field email_field text_field text_area telephone_field phone_field url_field number_field).each do |method_name|
       define_method(method_name) do |*args|
         attribute = args[0]
         options   = args[1] || {}
@@ -11,22 +12,6 @@ module FoundationRailsHelperMod
           super(attribute, options)
         end
       end
-    end
-
-    def text_field(attribute, options = {})
-      html = ''.html_safe
-
-      if options[:label].present?
-        html = custom_label(attribute, options[:label], options[:label_options]) do
-          options.delete(:label)
-          options.delete(:label_options)
-          super(attribute, options)
-        end
-      end
-
-      html += content_tag(:p, options[:description], :class => 'description') if options[:description].present?
-      html += error_and_hint(attribute, options)
-      html += Tags::TextField.new(object_name, method, self, options).render
     end
 
     def check_box(attribute, options = {})
